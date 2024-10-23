@@ -4,12 +4,14 @@ import { Container } from "./styles";
 import Form from "../Form";
 import TodoList from "../TodoList";
 
+// Main component for the todo app
 function Todo() {
   const [input, setInput] = useState("");
   const [todos, setTodos] = useState([]);
 
   console.log(input, "input");
 
+  //fetch data on component mount and on input change
   const fetchData = async () => {
     try {
       const response = await axios.get("/todos");
